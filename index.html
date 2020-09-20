@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="John Doe">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <h2>Let's play Etch-a-Sketch</h2>
+        
+
+        <div id="mid-section">
+            <div class="side-bar left-bar"></div>
+            <div id="container"></div>
+            <div class="side-bar right-bar">
+                <form>
+                    <input type="radio" id="black" name="color" value="black">
+                    <label for="black" id="black1">Black</label><br>
+                    <input type="radio" id="blue" name="color" value="blue">
+                    <label for="blue" id="blue1">Blue</label><br>
+                    <input type="radio" id="green" name="color" value="green">
+                    <label for="green" id="green1">Green</label><br>
+                    <input type="radio" id="grey" name="color" value="grey">
+                    <label for="grey" id="grey1">Grey</label><br>
+                    <input type="radio" id="red" name="color" value="red">
+                    <label for="red" id="red1">Red</label><br>
+                    <input type="radio" id="yellow" name="color" value="yellow">
+                    <label for="yellow" id="yellow1">Yellow</label><br>
+                    <input type="radio" id="random" name="color" value="random">
+                    <label for="random" id="random1">Random</label>
+                </form>
+            </div>
+        </div>
+        
+
+        <div id="div-button">
+            <button id="btn">Reset</button>
+        </div>
+
+        <footer>
+            <p>Welcome to the idol coding <i class="fa fa-laptop" aria-hidden="true"></i> channel.</p>
+            <div>
+                <a href="https://www.instagram.com/idol_coding/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://t.me/idolcoding"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+            </div>
+        </footer>
+    </body>
+
+    <script>
+        let container = document.querySelector("#container");
+        let div;
+
+        for (let i = 0; i < 256; i++) {
+            div = document.createElement("div");
+            div.classList.add("cell");
+            container.appendChild(div);
+        }
+
+        
+        let allDivs = document.querySelectorAll(".cell");
+        
+        //Black
+        let black = document.getElementById("black1");
+        black.addEventListener("click", function(){
+            allDivs.forEach(function(item){
+                item.addEventListener("mouseover", function(){
+                    item.classList.remove("black", "blue", "green", "grey", "red", "yellow");
+                    item.classList.add("black");
+                })
+            })
+        })
+        
+        
+        //Blue
+        let blue = document.getElementById("blue1");
+        blue.addEventListener("click", function(){
+            allDivs.forEach(function(item){
+                item.addEventListener("mouseover", function(){
+                    item.classList.remove("black", "blue", "green", "grey", "red", "yellow");
+                    item.classList.add("blue");
+                })
+            })
+        })
+
+        
+        //Green
+        let green = document.getElementById("green1");
+        green.addEventListener("click", function(){
+            allDivs.forEach(function(item){
+                item.addEventListener("mouseover", function(){
+                    item.classList.remove("black", "blue", "green", "grey", "red", "yellow");
+                    item.classList.add("green");
+                })
+            })
+        })
+
+        
+        //Grey
+        let grey = document.getElementById("grey1");
+        grey.addEventListener("click", function(){
+            allDivs.forEach(function(item){
+                item.addEventListener("mouseover", function(){
+                    item.classList.remove("black", "blue", "green", "grey", "red", "yellow");
+                    item.classList.add("grey");
+                })
+            })
+        })
+        
+        //Red
+        let red = document.getElementById("red1");
+        red.addEventListener("click", function(){
+            allDivs.forEach(function(item){
+                item.addEventListener("mouseover", function(){
+                    item.classList.remove("black", "blue", "green", "grey", "red", "yellow");
+                    item.classList.add("red");
+                })
+            })
+        })
+
+        //Yellow
+        let yellow = document.getElementById("yellow1");
+        yellow.addEventListener("click", function(){
+            allDivs.forEach(function(item){
+                item.addEventListener("mouseover", function(){
+                    item.classList.remove("black", "blue", "green", "grey", "red", "yellow");
+                    item.classList.add("yellow");
+                })
+            })
+        })
+
+        //Random
+        let colorArray = ["black", "blue", "green", "grey", "red", "yellow"];
+        let randomColor = Math.floor(Math.random()*colorArray.length);
+
+        let random = document.getElementById("random1");
+        random.addEventListener("click", function(){
+            allDivs.forEach(function(item){
+                item.addEventListener("mouseover", function(){
+                    item.classList.remove("black", "blue", "green", "grey", "red", "yellow");
+                    item.classList.add(colorArray[randomColor]);
+                })
+            })
+        })
+
+
+
+        
+        let reset = document.getElementById("btn");
+        reset.addEventListener("click", function(){
+            allDivs.forEach(function(item) {
+                item.classList.remove("black", "blue", "green", "grey", "red", "yellow", "random");
+            })
+        })
+        
+    </script>
+
+</html>
