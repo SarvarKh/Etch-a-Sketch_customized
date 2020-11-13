@@ -88,7 +88,10 @@ let container = document.querySelector("#container");
             allDivs.forEach(function(item){
                 item.addEventListener("mouseover", function(){
                     item.classList.remove("black", "blue", "green", "grey", "red", "yellow");
-                    item.classList.add(colorArray[randomColor]);
+                    for(let i = 0; i < 6; i++) {
+                        item.classList.add(colorArray[randomColor]);
+                    }
+                    
                 })
             })
         })
