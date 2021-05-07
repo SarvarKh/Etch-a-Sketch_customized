@@ -3,7 +3,7 @@ This is a Etch-a-Sketch web-game with the AI.
 
 
 
-![screenshot](img/image.png)
+![screenshot](img/snapshot.png?raw=true)
 
 
 
